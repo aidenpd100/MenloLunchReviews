@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Menlo School Lunch Reviews</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../static/styles/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Inter:500,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+          <div class="navbar-nav nav-fill w-100">
+            <a class="nav-item nav-link" href="login.html">Logout</a>
+            <a class="nav-item nav-link" id="today-nav-item" href="review.html">Today's Lunch</a>
+            <a class="nav-item nav-link active" href="#">Request a Meal</a>
+          </div>
+        </div>
+    </nav>
+    <div class="content">
+        <h2>What would you like to see?</h2>
+        <div class="row d-flex justify-content-center" id="request-name">
+            <div class="form-group form-width">
+                <textarea class="form-control" id="request-title" rows="1" placeholder="Lunch name"></textarea>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="form-group form-width">
+                <label for="request-description">Description (optional)</label>
+                <textarea class="form-control" id="request-description" rows="3"></textarea>
+            </div>
+        </div>
+        <input class="button" type="submit" value="Request" />
+    </div>
+</body>
