@@ -19,18 +19,27 @@
 			<div class="col-md-4 col-sm-6 col-xs-12">
 				<div class="login-form rounded">
 					<h2 class="text-center">Login</h2>
-					<form>
+					<form action="#" method="POST">
 						<div class="form-group">
 							<label for="username">Username</label>
-							<input type="text" class="form-control" id="username" placeholder="Enter username">
+							<input type="text" class="form-control" name="username" placeholder="Enter username">
 						</div>
 						<div class="form-group">
 							<label for="password">Password</label>
-							<input type="password" class="form-control" id="password" placeholder="Enter password">
+							<input type="password" class="form-control" name="password" placeholder="Enter password">
 						</div>
+
+						{% with messages = get_flashed_messages() %}
+							{% if messages %}
+								{% for msg in messages %}
+								<p class="flashed_msg">{{msg}}</p>
+								{% endfor %}
+							{% endif %}
+						{% endwith %}
+
                         <button type="submit" class="btn btn-primary btn-block">Log In</button> 
 						<hr>
-						<p class="text-center">Don't have an account? <a href="signup.html" class="signup-link">Sign Up</a></p>
+						<p class="text-center">Don't have an account? <a href="/signup" class="signup-link">Sign Up</a></p>
 					</form>
 				</div>
 			</div>
