@@ -16,6 +16,7 @@ class User(Base):
     id = Column("id", INTEGER, primary_key=True)
     username = Column("username", TEXT, nullable=False)
     password = Column("password", TEXT, nullable=False)
+    has_rated = Column("has_rated", BOOLEAN, nullable=False)
     is_admin = Column("is_admin", BOOLEAN, nullable=False)
 
 class Lunch(Base):
@@ -24,6 +25,7 @@ class Lunch(Base):
     # Columns
     id = Column("id", INTEGER, primary_key=True)
     title = Column("title", TEXT, nullable=False)
+    is_today = Column("is_today", BOOLEAN, nullable=False)
     avg_rating = Column("avg_rating", INTEGER, nullable=True)
 
 class Review(Base):

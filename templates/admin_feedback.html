@@ -1,33 +1,43 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Menlo School Lunch Reviews</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../static/styles/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Inter:500,700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg">
-        <div class="navbar-nav nav-fill w-100">
-            <a class="nav-item nav-link" href="login.html">Logout</a>
-            <a class="nav-item nav-link" id="today-nav-item-admin" href="admin_lunch.html">Today's Lunch</a>
-            <a class="nav-item nav-link active" href="admin_feedback.html">Feedback</a>
-          </div>
-        </div>
-    </nav>
+{% set active_page = "feedback" %}
+{% extends "base_admin.html" %}
+{% block content %}
     <div class="content">
         <div class="row">
             <div class="col-sm">
                 <h3>Reviews</h3>
+                <hr>
+                <div class="div-scroll">
+                    {% for review in reviews %}
+                        <input type="range" class="slider-disabled" name="rating" 
+                            min="0" max="100" value="{{review.rating}}" step="1">
+                        <p>{{review.feedback}}</p>
+                        <hr>
+                    {% endfor %}
+                </div>
             </div>
             <div class="col-sm">
                 <h3>Requests</h3>
+                <hr>
+                <div class="div-scroll">
+                    {% for request in requests %}
+                        <h4>{{request.title}}</h4>
+                        <p>{{request.description}}</p>
+                        <hr>
+                    {% endfor %}
+                </div>
             </div>
             <div class="col-sm">
                 <h3>All Lunches</h3>
+                <hr>
+                <div class="div-scroll">
+                    {% for lunch in lunches %}
+                        <h4>{{lunch.title}}</h4>
+                            <input type="range" class="slider-disabled" name="rating" 
+                            min="0" max="100" value="{{lunch.avg_rating}}" step="1">
+                        <hr>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>
-</body>
+{% endblock %}

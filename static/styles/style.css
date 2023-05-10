@@ -12,10 +12,12 @@ header {
 }
 
 .menlo {
+  font-size: 50px;
 	color: #FEA620;
 }
 
 .lunch-reviews {
+  font-size: 50px;
 	color: white;
 }
 
@@ -231,9 +233,12 @@ input[type=range] {
     color: white;
 }
 
-#avg-rating {
+.slider-disabled{
     pointer-events: none;
     opacity: 70%;
+}
+
+#avg-rating {
     width: 30%;
 }
 
@@ -248,3 +253,7 @@ input[type=range] {
   color: red;
 }
 
+.div-scroll{
+  height: 60vh;
+  overflow: scroll;
+}
